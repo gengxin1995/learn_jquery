@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <script src="../jquery-3.3.1.js"></script>
+    <style>
+        #container {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+        }
+        #container>div {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+        }
+        #top {
+            top: 0;
+            left: 20px;
+            background-color: #bb5a2c;
+        }
+        #right {
+            right: 0;
+            top: 20px;
+            background-color: #a5ca58;
+        }
+        #bottom {
+            bottom: 0;
+            left: 20px;
+            background-color: #6897bb;
+        }
+        #left {
+            left: 0;
+            top: 20px;
+            background-color: #e8bf6a;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="top"></div>
+    <div id="right"></div>
+    <div id="bottom"></div>
+    <div id="left"></div>
+</div>
+<script>
+    $(function () {
+        var css = {
+            dist: '30px',
+            border: '5px'
+        }
+        var options = {
+            duration: 600,
+            easing: 'swing'
+        }
+        var time = 1000;
+
+        setInterval(function () {
+            $('#top').animate({
+                'top': css.dist,
+                'border-radius': css.border
+            }, options).animate({
+                'top': 0,
+                'border-radius': 0
+            }, options)
+        }, time)
+        setInterval(function () {
+            $('#bottom').animate({
+                'bottom': css.dist,
+                'border-radius': css.border
+            }, options).animate({
+                'bottom': 0,
+                'border-radius': 0
+            }, options)
+        }, time)
+        setInterval(function () {
+            $('#right').animate({
+                'right': css.dist,
+                'border-radius': css.border
+            }, options).animate({
+                'right': 0,
+                'border-radius': 0
+            }, options)
+        }, time)
+        setInterval(function () {
+            $('#left').animate({
+                'left': css.dist,
+                'border-radius': css.border
+            }, options).animate({
+                'left': 0,
+                'border-radius': 0
+            }, options)
+        }, time)
+    });
+</script>
+</body>
+</html>
