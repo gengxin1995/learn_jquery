@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>左侧导航栏菜单</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="demo_jquery.css">
+    <script src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+    <section class="wraper-page">
+        <header class="header">
+            <span class="btn-side-bar"></span>
+            <h1 class="page-title">header</h1>
+        </header>
+        <p>请使用你的移动网页浏览本页面</p>
+        <p>点击左上角按钮试试效果</p>
+        <footer class="footer">footer</footer>
+    </section>
+    <section class="side-bar">
+        <ul>
+            <li>首页</li>
+            <li>菜单导航</li>
+            <li>jQuery特效</li>
+            <li>CSS3特效</li>
+            <li>tab标签</li>
+        </ul>
+    </section>
+    <script>
+        var sidebar = {
+            init: function () {
+                var self = this;
+                $('.btn-side-bar').click(function () {
+                    if ($(this).hasClass('active')) {
+                        self._sideLeft();
+                    } else {
+                        self._sideRight();
+                    }
+                })
+            },
+            _sideLeft: function () {
+                $('.side-bar').animate({'width': 0}, 50);
+                $('.wraper-page').animate({'margin-left': 0}, 50);
+                $('.btn-side-bar').removeClass('active');
+            },
+            _sideRight: function () {
+                $('.side-bar').animate({'width': '150px'}, 50);
+                $('.wraper-page').animate({'margin-left': '150px'}, 50);
+                $('.btn-side-bar').addClass('active');
+            }
+        }
+        sidebar.init();
+    </script>
+</body>
+</html>

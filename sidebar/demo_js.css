@@ -1,0 +1,86 @@
+body {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+body.active {
+    -webkit-transform: translateX(150px);
+    -moz-transform: translateX(150px);
+    -ms-transform: translateX(150px);
+    -o-transform: translateX(150px);
+    transform: translateX(150px);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.header, .footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    z-index: 1;
+}
+.header {
+    top: 0;
+    border-bottom: 1px solid red;
+}
+.footer {
+    bottom: 0;
+    border-top: 1px solid red;
+}
+.btn-side-bar {
+    width: 44px;
+    height: 44px;
+    float: left;
+    cursor: pointer;
+    line-height: 2.8;
+}
+.btn-side-bar::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: #999;
+    display: inline-block;
+    box-shadow: 0 7px #999, 0 -7px #999;
+}
+.wraper-page {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 44px;
+    overflow: hidden;
+}
+.side-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 150px;
+    left: 0;
+    z-index: 2;
+    -webkit-transform: translateX(-150px);
+    -moz-transform: translateX(-150px);
+    -ms-transform: translateX(-150px);
+    -o-transform: translateX(-150px);
+    transform: translateX(-150px);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.side-bar li {
+    padding-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    color: #fff;
+    border-bottom: 1px solid #222;
+}
